@@ -1,0 +1,30 @@
+#User function Template for python3
+
+class Solution:
+    def reverse_exponentiation(self, n):
+        num=n
+        result=0
+        while(n>0):
+            var=n%10
+            result=(result*10)+var
+            n=n//10
+        
+        res=num**result
+        return res
+        
+        
+
+
+#{ 
+ # Driver Code Starts
+# Input handling
+if __name__ == "__main__":
+    T = int(input())  # test cases
+
+    for _ in range(T):
+        n = int(input())  # input N
+        solution = Solution()
+        ans = solution.reverse_exponentiation(n)
+        print(ans)
+
+# } Driver Code Ends
