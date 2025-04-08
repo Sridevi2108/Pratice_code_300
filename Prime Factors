@@ -1,0 +1,34 @@
+#User function Template for python3
+import math
+class Solution:
+	def AllPrimeFactors(self, N):
+	    factors=set()
+	    while N%2==0:
+	        factors.add(2)
+	        N//=2
+	    i=3
+	    while i*i <=N:
+	        while N%i==0:
+	            factors.add(i)
+	            N//=i
+	        i+=2
+	    if N>2:
+	       factors.add(N)
+	    return sorted(factors)
+	       
+	            
+	        
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+	T=int(input())
+	for i in range(T):
+		N = int(input())
+		ob = Solution()
+		ans = ob.AllPrimeFactors(N)
+		for _ in ans:
+			print(_, end = " ")
+		print()
+# } Driver Code Ends
