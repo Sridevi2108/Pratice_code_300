@@ -1,0 +1,35 @@
+#User function Template for python3
+
+class Solution:
+    def sieveOfEratosthenes(self, n):
+        prime=[True]*(n+1)
+        prime[0]=prime[1]=False
+        lst=[]
+        p=2
+        while p*p<=n:
+            if prime[p]:
+                for i in range(p*p,n+1,p):
+                    prime[i]=False
+            p+=1
+        for i in range(2,n+1):
+            if prime[i]:
+                lst.append(i)
+        return lst
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        ob = Solution()
+        ans = ob.sieveOfEratosthenes(n)
+        for i in ans:
+            print(i, end=" ")
+        print()
+        print("~")
+
+# } Driver Code Ends
