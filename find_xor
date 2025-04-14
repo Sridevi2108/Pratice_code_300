@@ -1,0 +1,9 @@
+from typing import *
+
+def findXOR(L : int, R : int) -> int:
+    xor=0
+    for i in range(L,R+1):
+        xor^=i
+    return xor
+        
+    
